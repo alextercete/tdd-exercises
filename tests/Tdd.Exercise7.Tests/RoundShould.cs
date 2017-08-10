@@ -23,16 +23,18 @@ namespace Tdd.Exercise7.Tests
         [Test]
         public void Decide_scissors_beats_paper()
         {
-            _player1.RevealHand().Returns(Hand.Paper);
-            _player2.RevealHand().Returns(Hand.Scissors);
+            _player1.RevealHand().Returns(new Paper());
+            _player2.RevealHand().Returns(new Scissors());
+
             var winner = _round.Play(_player1, _player2);
             winner.ShouldBe(Winner.Player2);
         }
         [Test]
         public void Decide_paper_beats_rock()
         {
-            _player1.RevealHand().Returns(Hand.Paper);
-            _player2.RevealHand().Returns(Hand.Rock);
+            _player1.RevealHand().Returns(new Paper());
+            _player2.RevealHand().Returns(new Rock());
+
             var winner = _round.Play(_player1, _player2);
             winner.ShouldBe(Winner.Player1);
         }
@@ -40,8 +42,9 @@ namespace Tdd.Exercise7.Tests
         [Test]
         public void Decide_rock_beats_scissors()
         {
-            _player1.RevealHand().Returns(Hand.Rock);
-            _player2.RevealHand().Returns(Hand.Scissors);
+            _player1.RevealHand().Returns(new Rock());
+            _player2.RevealHand().Returns(new Scissors());
+
             var winner = _round.Play(_player1, _player2);
             winner.ShouldBe(Winner.Player1);
         }
@@ -49,8 +52,9 @@ namespace Tdd.Exercise7.Tests
         [Test]
         public void Decide_same_hands_are_a_draw()
         {
-            _player1.RevealHand().Returns(Hand.Rock);
-            _player2.RevealHand().Returns(Hand.Rock);
+            _player1.RevealHand().Returns(new Rock());
+            _player2.RevealHand().Returns(new Rock());
+
             var winner = _round.Play(_player1, _player2);
             winner.ShouldBe(Winner.None);
         }

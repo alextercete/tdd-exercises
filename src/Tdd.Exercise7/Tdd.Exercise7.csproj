@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="GameResult.cs" />
-    <Compile Include="Hand.cs" />
+    <Compile Include="IHand.cs" />
     <Compile Include="IPlayer.cs" />
     <Compile Include="Round.cs" />
     <Compile Include="Player.cs" />

@@ -2,7 +2,7 @@
 {
     public class Player : IPlayer
     {
-        public Hand RevealHand()
+        public IHand RevealHand()
         {
             throw new System.NotImplementedException();
         }

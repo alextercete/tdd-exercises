@@ -2,6 +2,6 @@
 {
     public interface IPlayer
     {
-        Hand RevealHand();
+        IHand RevealHand();
     }
 }
